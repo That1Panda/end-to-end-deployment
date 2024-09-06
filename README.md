@@ -11,3 +11,19 @@ This project demonstrates the implementation of a full CI/CD pipeline using GitH
 ## Goal
 
 The main objective of this project is to practice and solidify concepts related to continuous integration, continuous deployment, and software engineering for data science projects.
+
+## Running the Project
+
+To build and run the Docker container, follow these steps:
+
+1. **Make the Script Executable**:
+   ```bash
+   chmod +x run.sh
+   ```
+
+2. **Execute the Script**:
+    ```bash
+    sudo ./run.sh
+    ```
+    
+This will build the Docker image and run the container, exposing the API endpoint on the specified port in `run.sh`
