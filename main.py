@@ -1,8 +1,6 @@
 import torch
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 # Load the tokenizer and model
-tokenizer = AutoTokenizer.from_pretrained("nlptown/bert-base-multilingual-uncased-sentiment")
-model = AutoModelForSequenceClassification.from_pretrained("nlptown/bert-base-multilingual-uncased-sentiment")
 # Create a function to do sentiment classification
 def sentiment_classification(text: str) -> str:
     """
@@ -14,6 +12,8 @@ def sentiment_classification(text: str) -> str:
     Returns:
         str: The sentiment classification class.
     """
+    tokenizer = AutoTokenizer.from_pretrained("nlptown/bert-base-multilingual-uncased-sentiment")
+    model = AutoModelForSequenceClassification.from_pretrained("nlptown/bert-base-multilingual-uncased-sentiment")
     inputs = tokenizer(text, return_tensors="pt")
     outputs = model(**inputs)
     logits = outputs.logits
