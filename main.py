@@ -1,9 +1,12 @@
 import torch
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
+from fastapi import FastAPI
+
+app = FastAPI()
 
 
-# Load the tokenizer and model
 # Create a function to do sentiment classification
+@app.get("/sentiment_classification/{text}")
 def sentiment_classification(text: str) -> str:
     """
     This function takes a text input and returns the sentiment classification logits.
@@ -30,8 +33,7 @@ def sentiment_classification(text: str) -> str:
     return out
 
 
-# Test the function
-text = "I love you"
-out = sentiment_classification(text)
-print(out)
-# i made the code cramed up so that i test the pre-hook that i will make in next commits
+# # Test the function
+# text = "I love you"
+# out = sentiment_classification(text)
+# print(out)
